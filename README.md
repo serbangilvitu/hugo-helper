@@ -12,6 +12,10 @@ If you don't have one, you can clone an example such as https://github.com/swami
 ```
 docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-builder
 ```
+The configuration file defaults to `config.toml`, but you can specify a different one using the CONFIG_FILE env variable
+```
+docker run --rm -it --name hb -e CONFIG_FILE="config.yaml" -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-builder
+```
 
 Your website is now accessible at http://localhost:1313
 
