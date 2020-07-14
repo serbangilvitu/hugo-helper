@@ -6,15 +6,16 @@ It is not intended for production usage.
 ## Usage
 
 ### Running the server
-Change directory to your site repository.
+If you're creating a new site, have a look at these steps https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site
 
-If you don't have one, you can clone an example such as https://github.com/swaminator/hugo-example
+Change directory to your site repository.
+ 
 ```
-docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-builder
+docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-local
 ```
 The configuration file defaults to `config.toml`, but you can specify a different one using the CONFIG_FILE env variable
 ```
-docker run --rm -it --name hb -e CONFIG_FILE="config.yaml" -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-builder
+docker run --rm -it --name hb -e CONFIG_FILE="config.yaml" -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-local
 ```
 
 Your website is now accessible at http://localhost:1313
@@ -32,4 +33,4 @@ NEW_POST="my-awesome-idea" && \
 ```
 
 ### Commit your work
-Once you are happy with the way your site looks, you can commit your work, and deploy it to your website.
+Once you are content with the way your site looks, you can commit your work, and deploy it to your website.
