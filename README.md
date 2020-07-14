@@ -8,7 +8,9 @@ It is not intended for production usage.
 If you're creating a new site, have a look at these steps https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site
 You can run those commands in the container
 ```
-docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site --entrypoint "/bin/bash" docker.io/serbangilvitu/hugo-local
+docker run --rm -it --name hb -p 1313:1313 \
+-v $(pwd):/hugo/site --entrypoint "/bin/bash" \
+--workdir /hugo/site docker.io/serbangilvitu/hugo-local
 ```
 
 ### Running the server
@@ -16,11 +18,13 @@ docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site --entrypoint "/b
 Change directory to your site repository.
  
 ```
-docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-local
+docker run --rm -it --name hb -p 1313:1313 \
+-v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-local
 ```
 The configuration file defaults to `config.toml`, but you can specify a different one using the CONFIG_FILE env variable
 ```
-docker run --rm -it --name hb -e CONFIG_FILE="config.yaml" -p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-local
+docker run --rm -it --name hb -e CONFIG_FILE="config.yaml" \
+-p 1313:1313 -v $(pwd):/hugo/site docker.io/serbangilvitu/hugo-local
 ```
 
 Your website is now accessible at http://localhost:1313
