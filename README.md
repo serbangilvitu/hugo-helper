@@ -4,9 +4,14 @@ This project is intended to support local development for static websites runnin
 It is not intended for production usage.
 
 ## Usage
+### (Optional) Create a new site
+If you're creating a new site, have a look at these steps https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site
+You can run those commands in the container
+```
+docker run --rm -it --name hb -p 1313:1313 -v $(pwd):/hugo/site --entrypoint "/bin/bash" docker.io/serbangilvitu/hugo-local
+```
 
 ### Running the server
-If you're creating a new site, have a look at these steps https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site
 
 Change directory to your site repository.
  
