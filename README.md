@@ -1,4 +1,4 @@
-# hugo-builder
+# hugo-local
 This project is intended to support local development for static websites running with Hugo https://gohugo.io/
 
 It is not intended for production usage.

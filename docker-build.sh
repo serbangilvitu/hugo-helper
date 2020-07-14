@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-IMAGE='docker.io/serbangilvitu/hugo-builder'
+IMAGE='docker.io/serbangilvitu/hugo-local'
 TAG=$(git rev-parse --short HEAD)
 
 docker build . -f Dockerfile -t ${IMAGE}:${TAG}
