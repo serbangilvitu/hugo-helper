@@ -1,17 +1,25 @@
 # hugo-local
 This project is intended to support local development for static websites running with Hugo https://gohugo.io/
 
+In the quickstart directory I added a draft site with a draft template.
+
 It is not intended for production usage.
 
 ## Usage
 ### (Optional) Create a new site
 If you're creating a new site, have a look at these steps https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site
+
 You can run those commands in the container
 ```
 docker run --rm -it --name hb -p 1313:1313 \
 -v $(pwd):/hugo/site --entrypoint "/bin/bash" \
 --workdir /hugo/site docker.io/serbangilvitu/hugo-local
 ```
+After running all required commands, change the ownership of the directory containing the newly created site.
+E.g.
+```
+chown -R ${USER} quickstart
+``` 
 
 ### Running the server
 
