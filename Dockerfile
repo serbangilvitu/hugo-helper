@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ENV BASE_URL "http://localhost/"
+ENV BASE_URL "http://localhost"
 ENV CONFIG_FILE "config.toml"
 ENV HUGO_BASEDIR "/hugo"
 
