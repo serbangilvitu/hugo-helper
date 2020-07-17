@@ -3,7 +3,7 @@
 set -euo pipefail
 
 IMAGE='docker.io/serbangilvitu/hugo-local'
-TAG=$(git rev-parse --short HEAD)
+TAG="$(date --utc +%Y%m%dT%H%M%SZ)-$(git rev-parse --short HEAD)"
 
 docker build . -f Dockerfile -t ${IMAGE}:${TAG}
 docker tag ${IMAGE}:${TAG} ${IMAGE}:latest
